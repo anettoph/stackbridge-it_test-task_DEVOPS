@@ -8,13 +8,15 @@
 
 
 ## Структура проекта
+```text
 ├── backend/
-│ ├── Dockerfile
-│ └── app.py
+│   ├── Dockerfile
+│   └── app.py
 ├── nginx/
-│ └── nginx.conf
+│   └── nginx.conf
 ├── docker-compose.yml
 └── README.md
+```
 
 ## Как работает схема
 
