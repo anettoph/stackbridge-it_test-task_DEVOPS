@@ -30,69 +30,79 @@
    - Docker Compose
 
 2. Соберите и запустите контейнеры:
+```code 
 docker compose up -d --build
-
+```
 3. Проверьте, что оба контейнера запустились и находятся в статусе UP
+```code 
 docker compose ps
+```
 
 3. Для проверки работоспособности:
-curl -i http://localhost.
+```code 
+curl -i http://localhost/
+```
 
 Ожидаемый ответ:
-
+```text
 HTTP/1.1 200 OK
 Server: nginx/1.31.3
 Date: Fri, 31 Jul 2026 14:13:26 GMT
 Content-Type: text/plain
 Transfer-Encoding: chunked
 Connection: keep-alive
-
+```
 4. В случае возникновения ошибок:
 
 Читаем логи
+```code 
 docker compose logs
+```
 
 Смотрим запущенные в контейнерах процессы
+```code 
 docker compose top
+```
 
 5. Остановка проекта
+```code 
 docker compose down
-
+```
 
 ## Использованные технологии
 
 ### Backend
 
-Python 3.12 - язык программирования
-http.server - стандартная библиотека Python для HTTP-сервера
-BaseHTTPRequestHandler - обработчик HTTP-запросов
-python:3.12-slim - официальный облегченный образ python 3.12
+* Python 3.12 - язык программирования
+* http.server - стандартная библиотека Python для HTTP-сервера
+* BaseHTTPRequestHandler - обработчик HTTP-запросов
+* python:3.12-slim - официальный облегченный образ python 3.12
 
 ### Nginx
 
-Nginx 1.31 - веб-сервер и reverse proxy
-nginxinc/nginx-unprivileged - официальный образ nginx без root-привилегий
-Alpine Linux 3.24 - базовый образ для nginx
+* Nginx 1.31 - веб-сервер и reverse proxy
+* nginxinc/nginx-unprivileged - официальный образ nginx без root-привилегий
+* Alpine Linux 3.24 - базовый образ для nginx
 
 ### Контейнеризация
 
-Docker - платформа для контейнеризации приложений
-Docker Compose - оркестрация многоконтейнерных приложений
-Docker Networks - изолированная сеть для взаимодействия контейнеров
-Docker Volumes - монтирование конфигурационных файлов
+* Docker - платформа для контейнеризации приложений
+* Docker Compose - оркестрация многоконтейнерных приложений
+* Docker Networks - изолированная сеть для взаимодействия контейнеров
+* Docker Volumes - монтирование конфигурационных файлов
 
 ### Конфигурация
 
-YAML - формат файла docker-compose.yml
-Nginx Configuration - конфигурация reverse proxy
-Dockerfile - инструкции для сборки образа backend
+* YAML - формат файла docker-compose.yml
+* Nginx Configuration - конфигурация reverse proxy
+* Dockerfile - инструкции для сборки образа backend
 
 ### Инфраструктура
 
-Linux - хостовая операционная система
-Bridge Network Driver - тип Docker-сети для изоляции контейнеров
+* Linux - хостовая операционная система
+* Bridge Network Driver - тип Docker-сети для изоляции контейнеров
 
 ### Безопасность
 
-Non-root users - запуск процессов от непривилегированных пользователей
-Network Isolation - изоляция backend от внешней сети
+* Non-root users - запуск процессов от непривилегированных пользователей
+* Network Isolation - изоляция backend от внешней сети
