@@ -14,6 +14,8 @@
 │   └── app.py
 ├── nginx/
 │   └── nginx.conf
+├── tests/
+│   └── integration_test.py
 ├── docker-compose.yml
 └── README.md
 ```
@@ -106,3 +108,11 @@ docker compose down
 
 * Non-root users - запуск процессов от непривилегированных пользователей
 * Network Isolation - изоляция backend от внешней сети
+
+
+
+## Integration Tests 
+```code
+python3 -m unittest tests/integration_test.py
+```
+
